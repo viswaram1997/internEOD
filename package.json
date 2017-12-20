@@ -16,7 +16,6 @@
     "nanoid": "^1.0.1",
     "nodemon": "^1.13.3",
     "react": "^16.2.0",
-    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",

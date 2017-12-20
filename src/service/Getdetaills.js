@@ -1,5 +1,5 @@
 import axios from "axios";
-const BaseUrl="http://192.168.43.160:7070/";
+const BaseUrl="http://192.168.10.61:7070/";
 class DataService {
   
     async StoreDetails(data,date) {
