@@ -19,7 +19,7 @@ export function Getdetails(data){
        
             DataService.Getdetails(data)
                     .then((response) => {
-                        console.log(response.data,"actionstore")
+                        console.log(response,"actionstore")
                         dispatch({ type: "Getdetails",
                         payload: response.data})	
                 })

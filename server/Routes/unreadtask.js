@@ -3,13 +3,8 @@ import mysql from "mysql";
 import con from "./sql";
 
 function GetUnreadTask(body,res){
-    ([con.query("SELECT * FROM task WHERE read ='false'",[value], (err, result) => {
-        console.log(err);
-        if(isEmpty(err)){
-            res.json({
-                access:true
-            })
-        }
+    ([con.query("SELECT * FROM task WHERE viewed ='false'",[value], (err, result) => {
+       
     })])
     
 
