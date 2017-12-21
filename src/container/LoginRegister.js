@@ -1,6 +1,6 @@
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import LoginPage from "../component/LoginPage";
+import LoginRegister from "../component/LoginRegister";
 import { LoginUser ,SignUp} from "../redux/action/actions";
 
 const mapStateToProps = (state) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
     },dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginRegister);
