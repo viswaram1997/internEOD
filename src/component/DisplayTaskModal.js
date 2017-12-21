@@ -40,7 +40,6 @@ export default class DisplayTaskModal extends Component {
                         ))}
                     </Table>
                 </p>
-
             )
         })
         return (
