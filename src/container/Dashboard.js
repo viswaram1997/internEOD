@@ -1,11 +1,12 @@
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import DashBoard from "../component/Dashbord/DashBoard";
+import Dashboard from "../component/Dashboard";
 import { Storedetails,Getdetails ,Getcarddetails} from "../redux/action/actions";
 const mapStateToProps = (state) => {
+    console.log(state.StoreData.Getdetails);
     return ({
         Data:state.StoreData.StoreData,
-        getdata:state.StoreData.Getdetails,
+        getdata:state.StoreData.Getdetails.response,
         getcarddata:state.StoreData.Getcarddetails
     });
 }
@@ -20,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
     },dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

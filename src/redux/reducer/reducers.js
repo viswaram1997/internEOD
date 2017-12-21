@@ -5,7 +5,12 @@ const initialState = {
     loading: false
   },
   Getdetails:{
-    response:"",
+    response:{
+        userName: null,
+        eods: [],
+        totalDays: null,
+        tasksCompleted: null
+    },
     error: null,
     loading: false
   },

@@ -12,11 +12,11 @@
     "history": "^4.7.2",
     "lodash": "^4.17.4",
     "moment": "^2.20.0",
+    "mongodb": "^3.0.0-rc0",
     "mysql": "^2.15.0",
     "nanoid": "^1.0.1",
     "nodemon": "^1.13.3",
     "react": "^16.2.0",
-    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -36,5 +36,4 @@
     "eject": "react-scripts eject",
     "server": "nodemon --watch server --exec babel-node -- server/express.js"
   }
-  
 }

@@ -1,25 +1,26 @@
 import DataService from "../../service/Getdetaills";
+
 export function Storedetails(data,date){
     return (dispatch) => {
        
             DataService.StoreDetails(data,date)
                     .then((response) => {
                         console.log(response,"actionstore")
-                        dispatch({ type: "StoreData",
-                        payload: response.data})	
+                        dispatch({ 
+                            type: "Getdetails",
+                            payload: response.data
+                        })
                 })
-                .catch((error) => {	
+                .catch((error) => {
             });
-        
-    }  
+
+        }  
 }
 
 export function Getdetails(data){
     return (dispatch) => {
-       
             DataService.Getdetails(data)
                     .then((response) => {
-                        console.log(response,"actionstore")
                         dispatch({ type: "Getdetails",
                         payload: response.data})	
                 })
