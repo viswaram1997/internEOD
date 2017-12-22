@@ -2,6 +2,19 @@ import express from "express";
 import mysql from "mysql";
 import con from "./sql";
 import nanoid from "nanoid";
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+ 
+// Connection URL
+var url = 'mongodb://localhost:27017/doodleblue';
+0
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+ 
+ 
+  db.close();
+});
+
 
 
 let Router = express.Router();
