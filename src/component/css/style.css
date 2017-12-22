@@ -1,0 +1,21 @@
+#loginwrapping {
+    padding-top: 100px;
+}
+
+#logincard {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#loginheading {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px
+}
+
+@media (max-width: 480px){
+    #loginwrapping{
+        padding:15px;
+        padding-top:100px; 
+    }
+}
