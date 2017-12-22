@@ -47,7 +47,8 @@ export default class LoginRegister extends Component {
         this.setState({
             option: 'login',
             forgotPage1 : true,
-            forgotPage2 : false
+            forgotPage2 : false,
+            newPasswordPage: false
         })
     }
 
