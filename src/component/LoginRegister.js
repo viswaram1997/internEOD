@@ -9,9 +9,12 @@ export default class LoginRegister extends Component {
             registerPage1: true,
             registerPage2: false,
             forgotPage1 : true,
-            forgotPage2 : false
+            forgotPage2 : false,
+            newPasswordPage: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCheck = this.handleCheck.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
     }
 
     handleSubmit(e){
@@ -24,11 +27,35 @@ export default class LoginRegister extends Component {
         }
     }
 
+    handleCheck(e){
+        if(e === 'username'){
+            console.log('username')
+            this.setState({
+                forgotPage1: false,
+                forgotPage2: true
+            })
+        }else if(e === 'secretanswer'){
+            console.log('secretanswer')
+            this.setState({
+                newPasswordPage: true
+            })
+        }
+    }
+
+    handleChangePassword(){
+        console.log('change password');
+        this.setState({
+            option: 'login',
+            forgotPage1 : true,
+            forgotPage2 : false
+        })
+    }
+
   render() {
     const style={
         card: {
-            paddingTop: this.state.loginRegisterToggle ? 50 : 0,
-            paddingBottom: this.state.loginRegisterToggle ? 50 : 25,
+            paddingTop: this.state.option === 'login' ? 50 : 0,
+            paddingBottom: this.state.options === 'login' ? 50 : 25,
         },
         p: {
             textAlign: 'center',
@@ -108,23 +135,44 @@ export default class LoginRegister extends Component {
                         {this.state.forgotPage1 === true && this.state.forgotPage2 === false ?
                             <span>
                                 <Form.Input type="text" name="forgotusername" placeholder="Enter Username" icon="user" iconPosition="left" />
-                                <Button icon labelPosition="right">
-                                    <Icon name="right arrow"/>
-                                    Next
-                                </Button>
+                                <p style={{textAlign: 'right'}}>
+                                    <Button basic icon labelPosition="right" onClick={()=>{this.handleCheck('username')}}>
+                                        <Icon style={{background: 'none'}} name="right arrow"/>
+                                        Next
+                                    </Button>
+                                </p>
                             </span>
                             :
                             <span>
-                                <Message visible>What is your Date of Birth?</Message>
-                                <Form.Input type="text" name="secretanswer" placeholder="Enter Your Secret Answer" icon="key" iconPosition="left" />
-                                <Button icon labelPosition="right">
-                                    <Icon name="undo" />        
-                                    Reset
-                                </Button>
+                                {!this.state.newPasswordPage ? 
+                                    <span>
+                                        <Message visible>What is your Date of Birth?</Message>
+                                        <Form.Input type="text" name="secretanswer" placeholder="Enter Your Secret Answer" icon="key" iconPosition="left" />
+                                        <p style={style.p}>
+                                            <Button onClick={()=>{this.handleCheck('secretanswer')}} basic icon labelPosition="right">
+                                                <Icon style={{background: 'none'}} name="undo" />        
+                                                Reset
+                                            </Button>
+                                        </p>
+                                    </span>
+                                    :
+                                    <span>
+                                        <Form.Input type="password" name="enterpassword" placeholder="Enter Password" icon="key" iconPosition="left" />
+                                        <Form.Input type="password" name="repeatpassword" placeholder="Repeat Password" icon="privacy" iconPosition="left" />    
+                                        <p style={style.p}>
+                                            <Button onClick={()=>{this.handleChangePassword()}} positive icon labelPosition="right">
+                                                <Icon name="checkmark" />
+                                                Change Password
+                                            </Button>
+                                        </p>
+                                    </span>
+                                }
                             </span>
                         }
                     </Form>
-                )
+                );
+
+            default: 
         }
     }
 

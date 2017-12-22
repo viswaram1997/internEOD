@@ -7,7 +7,7 @@ import getcarddetails from "./Routes/getcarddetails";
 import signupcheck  from "./Routes/signupcheck";
 import signup from "./Routes/signup";
 import livesearch from "./Routes/liveserch";
-import unreadtask from "./Routes/unreadtask";
+// import unreadtask from "./Routes/unreadtask";
 let app=express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -18,7 +18,7 @@ app.use('/api/livesearch',livesearch);
 // app.use('/api/loginuser',userlogin);
  app.use('/api/signupcheck',signupcheck);
  app.use('/api/signup',signup);
- app.use('/api/unreadtask',unreadtask);
+//  app.use('/api/unreadtask',unreadtask);
 app.get('/',(req,res)=>{
     res.send("helloyarn");
 });
