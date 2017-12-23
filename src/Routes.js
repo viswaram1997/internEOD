@@ -3,6 +3,7 @@ import {Router, Route, Switch} from "react-router-dom";
 import createHistory from 'history/createBrowserHistory';
 import Dashboard from "./container/Dashboard";
 import LoginRegister from "./container/LoginRegister"
+import MentorDashboard from './component/MentorDashboard';
 
 class AppRouter extends Component {
   render() {
@@ -10,7 +11,7 @@ class AppRouter extends Component {
     return ( 
         <Router history={history}>
            <Switch>
-              <Route path="/" component={LoginRegister} exact={true} />
+              <Route path="/" component={MentorDashboard} exact={true} />
               <Route path="/dashboard" component={Dashboard} />
            </Switch>
         </Router>      
